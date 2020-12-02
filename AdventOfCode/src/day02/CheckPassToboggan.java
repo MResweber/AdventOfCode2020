@@ -1,14 +1,12 @@
-package day2;
+package day02;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import utilities.Utilities;
 
 public class CheckPassToboggan {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 		int valid = 0;
-		String[] input = readInput();
+		String[] input = Utilities.readInput();
 		for (int i = 0; i < input.length; i++) {
 			int dashIndex = input[i].indexOf("-");
 			int spaceIndex = input[i].indexOf(" ");
@@ -28,16 +26,5 @@ public class CheckPassToboggan {
 			}
 		}
 		System.out.println(valid);
-	}
-	
-	public static String[] readInput() throws FileNotFoundException {
-		File inputFile = new File("src/day2/input");
-		Scanner inputScanner = new Scanner(inputFile);
-		String input = "";
-		while (inputScanner.hasNext()) {
-			input += inputScanner.nextLine() + ",";
-		}
-		inputScanner.close();
-		return input.split(",");
 	}
 }
